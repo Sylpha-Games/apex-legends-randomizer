@@ -15,7 +15,9 @@ test:
   database: apex-legends-randomizer_test
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: apex-legends-randomizer_production
   username: apex-legends-randomizer
   password: <%= ENV['APEX-LEGENDS-RANDOMIZER_DATABASE_PASSWORD'] %>
