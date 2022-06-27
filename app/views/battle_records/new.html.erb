@@ -1,0 +1,25 @@
+<div class="text-center">
+  <p>
+    <img class="rounded" src=<%= "/legends/#{@legend.image}" %> alt="Legend" width="400px" height="240px">
+  </p>
+  <p><%= link_to @legend.name, legend_path(@legend), class: 'font-weight-bold h5' %></p>
+  <p>
+    <img class="rounded" src=<%= "/weapons/#{@weapon.image}" %> alt="Weapon" width="400px" height="210px">
+  </p>
+  <p><%= link_to @weapon.name, weapon_path(@weapon), class: 'font-weight-bold h5' %></p>
+</div>
+<div class="row my-5">
+  <div class="offset-xl-4 col-xl-4 offset-md-3 col-md-6">
+    <%= form_with(model: @battle_record, url: "/battle_records/#{@legend.id}/#{@weapon.id}", local: true) do |f| %>
+      <div class="form-group">
+        <%= f.label :stage, 'ステージ' %>
+        <%= f.collection_select(:stage_id, @stages, :id, :name, {prompt: "選択してください"}, {class: 'form-control'}) %>
+      </div>
+      <div class="form-group">
+        <%= f.label :damage, 'ダメージ' %>
+        <%= f.number_field(:damage, class: 'form-control') %>
+      </div>
+      <%= f.submit '登録する', class: 'btn btn-primary btn-block mt-5' %>
+    <% end %>
+  </div>
+</div>

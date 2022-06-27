@@ -1,0 +1,10 @@
+<div class="text-center mb-5">
+  <p>
+    <img class="rounded" src=<%= "/weapons/#{@weapon.image}" %> alt="Weapon" width="400px" height="210px">
+  </p>
+  <p>
+    <img class="rounded" src=<%= "/ammos/#{@weapon.ammo.image}" %> alt="Ammo" width="80px" height="80px">
+  </p>
+  <h1 class="font-weight-bold h4"><%= @weapon.name %></h1>
+  <p class="font-weight-bold h6"><%= @weapon.weapon_category.name %></p>
+</div>

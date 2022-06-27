@@ -1,0 +1,17 @@
+<div class="text-center mb-5">
+  <h1>武器一覧</h1>
+  <div class="row mt-5">
+    <% @weapons.each do |weapon| %>
+      <div class="col-xl-6 border pt-5 pb-3">
+        <p>
+          <img class="rounded" src=<%= "/weapons/#{weapon.image}" %> alt="Weapon" width="400px" height="210px">
+        </p>
+        <p>
+          <img class="rounded" src=<%= "/ammos/#{weapon.ammo.image}" %> alt="Ammo" width="80px" height="80px">
+        </p>
+        <p><%= link_to weapon.name, weapon_path(weapon), class: 'font-weight-bold h4' %></p>
+        <p class="font-weight-bold h6"><%= weapon.weapon_category.name %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
