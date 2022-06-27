@@ -1,10 +1,10 @@
 <div class="text-center">
   <p>
-    <img class="rounded" src=<%= "/legends/#{@legend.image}" %> alt="Legend" width="400px" height="240px">
+    <img class="rounded" src=<%= "/legends/#{@legend.image}" %> alt="Legend" width="320px" height="200px">
   </p>
   <p><%= link_to @legend.name, legend_path(@legend), class: 'font-weight-bold h5' %></p>
   <p>
-    <img class="rounded" src=<%= "/weapons/#{@weapon.image}" %> alt="Weapon" width="400px" height="210px">
+    <img class="rounded" src=<%= "/weapons/#{@weapon.image}" %> alt="Weapon" width="320px" height="200px">
   </p>
   <p><%= link_to @weapon.name, weapon_path(@weapon), class: 'font-weight-bold h5' %></p>
 </div>
