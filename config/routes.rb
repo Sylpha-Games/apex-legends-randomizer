@@ -19,8 +19,6 @@ Rails.application.routes.draw do
 
   resources :stages, only: [:index, :show]
   
-  get 'battle_records/new/:legend_id/:weapon_id', to: 'battle_records#new'
-  post 'battle_records/:legend_id/:weapon_id', to: 'battle_records#create'
-  resources :battle_records, only: [:index, :edit, :update, :destroy]
+  resources :battle_records, only: [:index, :new, :create, :edit, :update, :destroy]
 
 end

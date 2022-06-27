@@ -9,16 +9,14 @@ class BattleRecordsController < ApplicationController
   
   def new
     @battle_record = BattleRecord.new
-    @legend = Legend.find(params[:legend_id])
-    @weapon = Weapon.find(params[:weapon_id])
+    @legends = Legend.order(id: :asc)
+    @weapons = Weapon.order(id: :asc)
     @stages = Stage.order(id: :asc)
   end
   
   def create
     @battle_record = BattleRecord.new(battle_record_create_params)
     @battle_record.user_id = session[:user_id]
-    @battle_record.legend_id = params[:legend_id]
-    @battle_record.weapon_id = params[:weapon_id]
     if @battle_record.save
       msg = "レジェンド：#{@battle_record.legend.name},武器：#{@battle_record.weapon.name},ステージ：#{@battle_record.stage.name},ダメージ：#{@battle_record.damage}"
       msg = msg.gsub(",","<br>")
@@ -54,7 +52,7 @@ class BattleRecordsController < ApplicationController
   private
   
   def battle_record_create_params
-    params.require(:battle_record).permit(:stage_id, :damage)
+    params.require(:battle_record).permit(:legend_id, :weapon_id, :stage_id, :damage)
   end
   
   def battle_record_update_params
