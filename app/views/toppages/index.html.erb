@@ -3,18 +3,20 @@
     <p>
       <img class="rounded mx-auto" src=<%= "/legends/#{@legend.image}" %> alt="Legend" width="320px" height="200px">
     </p>
-    <p>
-    <p><%= link_to @legend.name, legend_path(@legend), class: 'font-weight-bold h5' %></p>
+    <p><%= link_to @legend.name, legend_path(@legend), class: 'font-weight-bold h4' %></p>
   <% end %>
-  <p class="mt-3 mb-5"><%= link_to 'レジェンドランダム生成', '/legends/random', method: :post, class: 'btn btn-lg btn-primary' %></p>
+  <p class="mt-4 mb-5"><%= link_to 'レジェンドランダム生成', '/legends/random', method: :post, class: 'btn btn-lg btn-primary' %></p>
   <% if @weapon %>
     <p class="mt-5">
       <img class="rounded mx-auto" src=<%= "/weapons/#{@weapon.image}" %> alt="Weapon" width="320px" height="200px">
     </p>
     <p>
-    <p><%= link_to @weapon.name, weapon_path(@weapon), class: 'font-weight-bold h5' %></p>
+      <%= link_to @weapon.name, weapon_path(@weapon), class: 'font-weight-bold h4' %>
+      <img class="rounded ml-2 mb-1" src=<%= "/ammos/#{@weapon.ammo.image}" %> alt="Ammo" width="30px" height="30px">
+    </p>
+    <p class="font-weight-bold h5"><%= @weapon.weapon_category.name %></p>
   <% end %>
-  <p class="mt-3 mb-5"><%= link_to '武器ランダム生成', '/weapons/random', method: :post, class: 'btn btn-lg btn-primary' %></p>
+  <p class="mt-4 mb-5"><%= link_to '武器ランダム生成', '/weapons/random', method: :post, class: 'btn btn-lg btn-primary' %></p>
   <% if login? %>
     <% if @legend %>
       <% if @weapon %>

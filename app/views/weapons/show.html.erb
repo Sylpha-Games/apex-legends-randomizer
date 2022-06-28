@@ -2,9 +2,9 @@
   <p>
     <img class="rounded" src=<%= "/weapons/#{@weapon.image}" %> alt="Weapon" width="320px" height="200px">
   </p>
-  <p>
-    <img class="rounded" src=<%= "/ammos/#{@weapon.ammo.image}" %> alt="Ammo" width="80px" height="80px">
+  <p class="font-weight-bold h4">
+    <%= @weapon.name %>
+    <img class="rounded  ml-2 mb-1" src=<%= "/ammos/#{@weapon.ammo.image}" %> alt="Ammo" width="30px" height="30px">
   </p>
-  <h1 class="font-weight-bold h4"><%= @weapon.name %></h1>
-  <p class="font-weight-bold h6"><%= @weapon.weapon_category.name %></p>
+  <p class="font-weight-bold h5"><%= @weapon.weapon_category.name %></p>
 </div>
