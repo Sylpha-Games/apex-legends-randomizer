@@ -1,5 +1,8 @@
 <div class="text-center mb-5">
-  <h1>武器一覧</h1>
+  <p>
+    <img class="rounded" src=<%= "/ammos/#{@ammo.image}" %> alt="Ammo" width="200px" height="200px">
+  </p>
+  <h1 class="h4 font-weight-bold"><%= @ammo.name %></h1>
   <div class="row mt-5">
     <% @weapons.each do |weapon| %>
       <div class="col-xl-6 border pt-5 pb-3">

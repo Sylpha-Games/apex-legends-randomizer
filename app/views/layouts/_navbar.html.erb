@@ -9,6 +9,7 @@
         <% if login? %>
           <li class="nav-item"><%= link_to 'レジェンド', legends_path, class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to '武器', weapons_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to '弾薬', ammos_path, class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'ステージ', stages_path, class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'バトル記録', battle_records_path, class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to current_user.name, user_path(current_user), class: 'nav-link' %></li>

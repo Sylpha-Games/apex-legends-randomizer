@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   post 'weapons/random', to: 'weapons#random'
   post 'weapons/random_destroy', to: 'weapons#random_destroy'
   resources :weapons, only: [:index, :show]
+  
+  post 'ammos/random', to: 'ammos#random'
+  post 'ammos/random_destroy', to: 'ammos#random_destroy'
+  resources :ammos, only: [:index, :show]
 
   resources :stages, only: [:index, :show]
   
